@@ -104,6 +104,11 @@ class Header(Enum):
 	INPUT_LENGTH                     = (0x6E, 'IL', False,    int,          4,      0,                 'Input data length in trace data')
 	OUTPUT_LENGTH                    = (0x6F, 'OL', False,    int,          4,      0,                 'Output data length in trace data')
 	KEY_LENGTH                       = (0x70, 'KL', False,    int,          4,      0,                 'Key data length in trace data')
+	NUMBER_CHANNELS                  = (0x71, 'CH', False,    int,          4,      0,                 'Number of enabled channels used for acquisition')
+	NUMBER_SCOPES                    = (0x72, 'NO', False,    int,          4,      0,                 'Number of scopes used for acquisition')
+	XY_WIDTH                         = (0x73, 'WI', False,    float,        4,      0,                 'Width in case of XY acquisition')
+	XY_HEIGHT                        = (0x74, 'HE', False,    float,        4,      0,                 'Height in case of XY acquisition')
+	XY_NUMBER_MEASUREMENTS_PER_SPOT  = (0x75, 'ME', False,    int,          4,      0,                 'Measurements per spot in case of XY acquisition')
 
 	def __new__(cls, tag, tag_name, is_mandatory, type, length, default, description):
 		obj = object.__new__(cls)
